@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>
+    //1). 
+
+    class Voiture{
+        constructor(model,marque,annee,type,carburant){
+        this.model= model;
+        this.marque = marque ;
+        this.annee = annee;
+        this.type = type;
+        this.carburant = carburant;
+
+    }}
+    //2)
+    let voitures = [
+    new Voiture("Clio", "Renault", 2022, "Berline", "Essence"),
+    new Voiture("Golf", "Volkswagen", 2021, "Hatchback", "Diesel"),
+    new Voiture("Model S", "Tesla", 2023, "Sedan", "Électrique"),
+    new Voiture("Civic", "Honda", 2020, "Berline", "Hybride"),
+    new Voiture("A3", "Audi", 2022, "Compacte", "Essence")
+];
+
+//3)heritage
+
+class Hyndai extends Voiture{
+    constructor(model, annee, type, carburant, serie, hybride) {
+    super(model, "Hyundai", annee, type,carburant);
+        this.s = serie;
+        this.h= hybride;
+    }
+    alarmer(){
+
+    }
+}
+class Ford extends Voiture{
+    constructor(model, annee, type, carburant, ...options) { 
+        super(model, "Ford", annee, type, carburant);
+         this.options= options;
+    }
+}
+voitures.sort((a, b) => parseInt(a.annee) - parseInt(b.annee));
+</script>
+</body>
+</html>

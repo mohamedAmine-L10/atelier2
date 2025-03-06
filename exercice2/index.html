@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercice2</title>
+</head>
+<body>
+
+    <script>
+        function Etudiant(nom, prenom, age, cne) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.age = age;
+    this.cne = cne;
+}
+
+function Professeur(nom, age, cin) {
+    this.nom = nom;
+    this.age = age;
+    this.cin = cin;
+}
+//####################################33
+
+
+
+Etudiant.prototype.etudier = function() {
+    return `${this.prenom} ${this.nom} est en train d'etudier`;
+};
+
+
+Professeur.prototype.enseigner = function() {
+    return `Le professeur ${this.nom} est en train d'enseigner`;
+};
+
+
+let etudiants = [
+    new Etudiant("ilyas", "mustapha", 21, "CNE123"),
+    new Etudiant("mohamed", "amine", 22, "CNE456"),
+    new Etudiant("hamza", "yousef", 20, "CNE789"),
+    new Etudiant("mohamed", "khaled", 19, "CNE321"),
+    new Etudiant("namiq", "rafiqi", 23, "CNE654")
+];
+
+etudiants.sort((x, y) => 
+    x.nom.localeCompare(y.nom) === 0 ? x.prenom.localeCompare(y.prenom) : x.nom.localeCompare(y.nom)
+);
+
+    </script>
+</body>
+</html>

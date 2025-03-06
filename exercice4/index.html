@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini blog</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sub-container">
+            <nav>
+                <h1>{code <span>wall</span>}</h1>
+                <ul>
+                    <li><a href="">my blogs</a></li>
+                    <li><a href="">login</a></li>
+                    <li><a href="">sign up</a></li>
+                </ul>
+            </nav>
+            <div class="second">
+                <h2>your blog posts</h2>
+                <button class="add-post">add new post</button>
+            </div>
+
+            <div class="post">
+                <h3>your post</h3>
+                <div class="input-cont">
+                    <input type="text" placeholder="title">
+                    <textarea placeholder="description"></textarea>
+                </div>
+                <button class="post-btn">post</button>
+            </div>   
+        </div>
+    </div>
+    <script>
+        document.querySelector("textarea").addEventListener("input",function(){
+            if(this.value.length===1){
+                this.value= this.value.toUpperCase()
+            }
+        })
+    </script>
+</body>
+</html>

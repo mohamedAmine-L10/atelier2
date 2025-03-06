@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Vecteur2D{
+            constructor(x=0,y=0){
+                this.x=x;
+                this.y=y;
+            }
+            afficher(){
+                console.log(`x = ${this.x} et y = ${this.y}`);
+            }
+            static add(X,Y){
+                let Z = new Vecteur2D();
+                Z.x =X.x + Y.x;
+                Z.y = X.y+Y.y;
+                return Z;
+            }
+            add(Y){
+                console.log(`la somme des coordonee est  : (${this.x+Y.x},${this.y+Y.y})`)
+            }
+        }
+
+        let vectSansParam = new Vecteur2D();
+        let vectAvecParam = new Vecteur2D(10,20);
+        vectAvecParam.afficher()
+        let Z = Vecteur2D.add(vectSansParam,vectAvecParam);
+        Z.afficher();
+        vectAvecParam.add(new Vecteur2D(3,2))
+        
+//###########################################################################
+class Rectangle{
+    constructor(largeur=0,longueur=0){
+        this.nom = "rectangle";
+        this.lar = largeur;
+        this.long=longueur;
+    }
+    afficher(){
+        console.log(` le nom: ${this.nom} la longueur est: ${this.long} et la largeur du rectangle est: ${this.lar}`);
+    }
+    surface(){
+        return this.lar*this.long;
+    }
+}
+
+class Carre extends Rectangle{
+    constructor(cote){
+        super(cote,cote);
+        this.nom="carre";
+    }
+
+}
+
+let r = new Rectangle(1,3);
+let c = new Carre(5);
+r.afficher();
+c.afficher();
+
+//#############################################################
+class Point{
+    constructor(x=0.0,y=0.0){
+        this.x = x ;
+        this.y = y ;
+    }
+}
+
+class Segment{
+    constructor(xOrig,xExtrem,yOrig,yExtrem){
+        this.orig = new Point(xOrig,yOrig);
+        this.extrem = new Point(xExtrem,yExtrem);
+    }   
+}
+
+    </script>
+</body>
+</html>
