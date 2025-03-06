@@ -108,7 +108,7 @@ span{
     display: flex;
     flex-direction:column;
     justify-content: space-between;
-    height: 50vh;
+    height: 55vh;
     border:solid black 2px;
     padding:20px;
     position:relative;
@@ -171,11 +171,15 @@ span{
 
 .post-btn{
     align-self: flex-end;
-    transition:all .3s
+    transition:all.3s
     
 }
-
-.post-btn:hover{
+.add-post{
+    transition:all .3s
+}
+.post-btn:hover , .add-post:hover{
     scale:1.1;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.339);
+    background-color: rgb(18, 72, 208);
+
 }
